@@ -1,5 +1,7 @@
 # Docker Wordpress Image with Support for [NewRelic](http://newrelic.com/)
 
+[![](https://imagelayers.io/badge/czerasz/wordpress-newrelic:latest.svg)](https://imagelayers.io/?images=czerasz/wordpress-newrelic:latest 'Get your own badge on imagelayers.io')
+
 ## Usage
 
 Create data volume:
