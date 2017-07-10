@@ -11,6 +11,6 @@ RUN apt-get update && \
     apt-get install -y newrelic-php5
 
 # Copy script which will be executed before the original entrypoint
-COPY ./entrypoint.sh /entrypoint.pre.sh
+COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.pre.sh
 
-ENTRYPOINT ["/entrypoint.pre.sh"]
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.pre.sh"]
