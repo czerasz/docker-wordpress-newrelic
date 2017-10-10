@@ -1,4 +1,4 @@
-FROM wordpress:4.8.0-php7.1-fpm
+FROM wordpress:4.8.2-php7.1-fpm
 
 MAINTAINER Michał Czeraszkiewicz <contact@czerasz.com>
 
