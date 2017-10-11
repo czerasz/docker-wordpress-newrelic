@@ -12,7 +12,14 @@ RUN mkdir /tmp/newrelic && \
     cp -a "$(ls | grep 'newrelic')/." /opt/newrelic/ && \
     rm -rf /tmp/newrelic
 
+# Install the gomplate utility to be able to generate templates
+RUN wget -O /usr/local/bin/gomplate https://github.com/hairyhenderson/gomplate/releases/download/v2.0.1/gomplate_linux-amd64-slim &&\
+    chmod 755 /usr/local/bin/gomplate
+
 # Copy script which will be executed before the original entrypoint
 COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.pre.sh
+
+# Copy templates
+COPY ./templates /templates
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.pre.sh"]
