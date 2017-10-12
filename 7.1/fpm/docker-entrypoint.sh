@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Render PHP configuration file
-gomplate --file /templates/php-override.ini --out /usr/local/etc/php/conf.d/php-override.ini
+if [ $(env | grep -E '^PHP_' | wc -l) -gt 0 ]; then
+  gomplate --file /templates/php-override.ini --out /usr/local/etc/php/conf.d/php-override.ini
+fi
 
 # Render NewRelic configuration file
 if [ ! -z "$NEWRELIC_LICENSE" ] && [ ! -z "$NEWRELIC_APPNAME" ]; then
