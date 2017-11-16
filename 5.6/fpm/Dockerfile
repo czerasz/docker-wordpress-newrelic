@@ -12,7 +12,7 @@ RUN apt-get update && \
     apt-get install -y newrelic-php5
 
 # Install the gomplate utility to be able to generate templates
-RUN wget -O /usr/local/bin/gomplate https://github.com/hairyhenderson/gomplate/releases/download/v2.1.0/gomplate_linux-amd64-slim &&\
+RUN wget -O /usr/local/bin/gomplate https://github.com/hairyhenderson/gomplate/releases/download/v2.2.0/gomplate_linux-amd64-slim &&\
     chmod 755 /usr/local/bin/gomplate
 
 # Copy script which will be executed before the original entrypoint
