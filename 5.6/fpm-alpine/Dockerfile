@@ -1,4 +1,4 @@
-FROM wordpress:4.8.2-php5.6-fpm-alpine
+FROM wordpress:4.9.1-php5.6-fpm-alpine
 
 MAINTAINER Michał Czeraszkiewicz <contact@czerasz.com>
 
