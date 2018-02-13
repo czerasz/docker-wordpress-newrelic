@@ -1,4 +1,4 @@
-FROM wordpress:4.9.1-fpm
+FROM wordpress:4.9.4-fpm
 
 MAINTAINER Michał Czeraszkiewicz <contact@czerasz.com>
 
