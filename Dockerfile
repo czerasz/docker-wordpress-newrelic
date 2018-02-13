@@ -4,7 +4,7 @@ MAINTAINER Michał Czeraszkiewicz <contact@czerasz.com>
 
 # Add NewRelic PHP support
 RUN apt-get update && \
-    apt-get install -y wget && \
+    apt-get install -y wget gnupg && \
     rm -rf /var/lib/apt/lists/* &&\
     wget -O - https://download.newrelic.com/548C16BF.gpg | apt-key add - && \
     echo "deb http://apt.newrelic.com/debian/ newrelic non-free" > /etc/apt/sources.list.d/newrelic.list && \
