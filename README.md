@@ -12,28 +12,27 @@ docker volume create --name=wordpress-data
 
 ```bash
 docker run --name=wordpress \
-           --env-file=configuration/.env \
+           --env=NEWRELIC_LICENSE="<your license key>" \
+           --env=NEWRELIC_APPNAME="<application name>" \
            --hostname=wordpress \
            --link=db:mysql \
-           --volume=configuration/php/newrelic.ini:/usr/local/etc/php/conf.d/newrelic.ini:ro \
            --volume=wordpress-data:/var/www/html \
-           czerasz/wordpress-newrelic:4.5.0-fpm
+           czerasz/wordpress-newrelic:latest
 ```
 
-Where a `configuration/php/newrelic.ini` example is presented below:
+## Environment Variables
 
-```
-;
-; This file contains the various settings for the New Relic PHP agent. There
-; are many options, all of which are described in detail at the following URL:
-; https://newrelic.com/docs/php/php-agent-phpini-settings
-;
+- `NEWRELIC_LICENSE` (**required**, default: not defined)
+- `NEWRELIC_APPNAME` (**required**, default: not defined)
 
-extension = "newrelic.so"
-
-[newrelic]
-
-newrelic.license = "<your license key>"
-newrelic.appname = "<application name>"
-newrelic.framework = "wordpress"
-```
+- `PHP_MEMORY_LIMIT` (default `96M`)
+- `PHP_MAX_EXECUTION_TIME` (default `60`)
+- `PHP_MAX_INPUT_VARS` (default `5000`)
+- `PHP_UPLOAD_MAX_FILESIZE` (default `5M`)
+- `PHP_POST_MAX_SIZE` (default `5M`)
+- `PHP_LOG_LEVEL` (default `error`)
+- `PHP_FPM_PM_MAX_CHILDREN` (default `10`)
+- `PHP_FPM_PM_START_SERVERS` (default `2`)
+- `PHP_FPM_PM_MIN_SPARE_SERVERS` (default `1`)
+- `PHP_FPM_PM_MAX_SPARE_SERVERS` (default `3`)
+- `PHP_FPM_PM_MAX_REQUESTS` (default `500`)
