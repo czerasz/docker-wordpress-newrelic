@@ -7,8 +7,8 @@ if [ $(env | grep -E '^PHP_' | wc -l) -gt 0 ]; then
 fi
 
 if [ ! -z "$NEWRELIC_LICENSE" ] && [ ! -z "$NEWRELIC_APPNAME" ]; then
-  # Render NewRelic configuration file
-  gomplate --file /templates/newrelic.ini --out /usr/local/etc/php/conf.d/newrelic.ini
+  # Copy NewRelic configuration file
+  cp /templates/newrelic.ini /usr/local/etc/php/conf.d/newrelic.ini
 
   # Initialize NewRelic APM
   NR_INSTALL_SILENT=true NR_INSTALL_PHPLIST="/usr/local/bin" NR_INSTALL_PATH="/usr/local/bin" /usr/bin/newrelic-install install
