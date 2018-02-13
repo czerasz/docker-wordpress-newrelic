@@ -22,4 +22,3 @@ COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.pre.sh
 COPY ./templates /templates
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.pre.sh"]
-

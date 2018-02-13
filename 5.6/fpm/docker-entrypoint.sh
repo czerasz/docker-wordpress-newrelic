@@ -3,6 +3,7 @@
 # Render PHP configuration file
 if [ $(env | grep -E '^PHP_' | wc -l) -gt 0 ]; then
   gomplate --file /templates/php-override.ini --out /usr/local/etc/php/conf.d/php-override.ini
+  gomplate --file /templates/php-fpm-www-override.conf --out /usr/local/etc/php-fpm.d/php-fpm-www-override.conf
 fi
 
 # Render NewRelic configuration file
