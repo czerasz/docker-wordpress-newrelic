@@ -9,7 +9,7 @@ RUN apt-get update && \
     wget -O - https://download.newrelic.com/548C16BF.gpg | apt-key add - && \
     echo "deb http://apt.newrelic.com/debian/ newrelic non-free" > /etc/apt/sources.list.d/newrelic.list && \
     apt-get update && \
-    apt-get install -y newrelic-php5
+    apt-get install -y newrelic-php7
 
 # Install the gomplate utility to be able to generate templates
 RUN wget -O /usr/local/bin/gomplate https://github.com/hairyhenderson/gomplate/releases/download/v2.2.0/gomplate_linux-amd64-slim &&\
