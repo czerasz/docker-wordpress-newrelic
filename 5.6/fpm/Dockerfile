@@ -24,7 +24,7 @@ RUN apt-get update && \
     wget -O /tmp/wp-cli-${WP_CLI_VERSION}.phar.sha512 https://github.com/wp-cli/wp-cli/releases/download/v${WP_CLI_VERSION}/wp-cli-${WP_CLI_VERSION}.phar.sha512 && \
     echo "$(cat /tmp/wp-cli-${WP_CLI_VERSION}.phar.sha512)  /tmp/wp-cli-${WP_CLI_VERSION}.phar" | sha512sum --status -c - && \
     mv /tmp/wp-cli-${WP_CLI_VERSION}.phar /usr/local/bin/wp && \
-    chmod u+x /usr/local/bin/wp && \
+    chmod +x /usr/local/bin/wp && \
     rm -f /tmp/wp-cli-* && \
     mkdir -p /home/www-data/.wp-cli/ && \
     echo '---' >> /home/www-data/.wp-cli/config.yml && \
